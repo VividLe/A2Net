@@ -1,0 +1,81 @@
+BASIC:
+  ROOT_DIR: '/disk3/yangle/A2Net/Ablation-Comparison/SSAD'
+  WORKERS: 4
+  SEED: 0
+  BACKUP_CODES: True
+  BACKUP_LISTS: ['lib', 'experiments', 'tools']
+  SAVE_PREDICT_RESULT: False
+  SHOW_CFG: False
+  CREATE_OUTPUT_DIR: True
+
+
+CUDNN:
+  BENCHMARK: False
+  DETERMINISTIC: True
+  ENABLE: True
+
+
+DATASET:
+  FEAT_DIR: 'data/thumos'
+  TRAIN_SPLIT: 'val'
+  VAL_SPLIT: 'test'
+  WINDOW_SIZE: 512
+  NUM_CLASSES: 21
+  CLASS_IDX: [0, 7, 9, 12, 21, 22, 23, 24, 26, 31, 33, 36, 40, 45, 51, 68, 79, 85, 92, 93, 97]
+  OVERLAP_RATIO_TH: 0.9
+  MAX_SEGMENT_NUM: 30
+  PIN_MEMORY: True
+
+
+MODEL:
+  LAYERS_NAME: ['AL1', 'AL2', 'AL3']
+  SCALE: {'AL1': 0.0625, 'AL2': 0.125, 'AL3': 0.25}
+  NUM_ANCHORS: {'AL1': 16, 'AL2': 8, 'AL3': 4}
+  ASPECT_RATIOS: {'AL1': [0.5, 0.75, 1, 1.5, 2],
+                  'AL2': [0.5, 0.75, 1, 1.5, 2],
+                  'AL3': [0.5, 0.75, 1, 1.5, 2]}
+  NUM_DBOX: {'AL1': 5, 'AL2': 5, 'AL3': 5}
+
+
+TRAIN:
+  LR: 0.0001
+  BATCH_SIZE: 4
+  BEGIN_EPOCH: 1
+  END_EPOCH: 100
+  LR_DECAY_EPOCHS: [30]
+  LR_DECAY_FACTOR: 0.1
+  P_CLASS_AB: 1
+  P_CONF_AB: 10
+  P_LOC_AB: 10
+  NEGATIVE_RATIO: 1
+  ANCHOR_RX_SCALE: 0.1
+  ANCHOR_RW_SCALE: 0.1
+  MATCH_TH: 0.5
+  MODELS_DIR: ''
+  LOG_FILE: 'output/thumos/ssad-all-channel=2048/train_loss.log'
+  MODEL_DIR: 'output/thumos/ssad-all-channel=2048/'
+
+
+TEST:
+  BATCH_SIZE: 1
+  EVAL_INTERVAL:  1
+#  EVAL_INTERVAL: [] # [28, 30, 32, 34, 36, 38, 40]
+  TOP_K_RPOPOSAL: 200
+  SOFT_NMS_ALPHA: 0.75
+  SOFT_NMS_LOW_TH: 0.65
+  SOFT_NMS_HIGH_TH: 0.9
+  NMS_TH: 0.2
+#  CONCAT_AB: 0.8
+  FILTER_NEGATIVE_TH: 0.98
+  FILTER_CONF_TH: 0.1
+  FRAME_RATE: 25
+  # assign cliffDiving instance as diving
+  CATE_IDX_OCC: 22
+  CATE_IDX_REP: 26
+  VIDEOS_25FPS: ['video_test_0000950', 'video_test_0001058', 'video_test_0001195', 'video_test_0001255', 'video_test_0001459']
+  VIDEOS_24FPS: ['video_test_0001207']
+  IDX_NAME_FILE: 'lib/dataset/materials/idx_name_dict.pkl'
+  GT_FILE: 'lib/dataset/materials/activity_net.v1-3.min.json'
+  PREDICT_CSV_FILE: 'output/thumos/ssad-all-channel=2048/prediction'
+  PREDICT_TXT_FILE: 'output/thumos/ssad-all-channel=2048/action_detection'
+  OUTDF_COLUMNS_AB: ['video_name', 'cate_idx', 'conf', 'xmax', 'xmin']

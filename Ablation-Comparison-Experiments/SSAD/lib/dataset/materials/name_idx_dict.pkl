@@ -1,0 +1,602 @@
+(dp0
+S'Skateboarding'
+p1
+I157
+sS'Drinking coffee'
+p2
+I53
+sS'Zumba'
+p3
+I200
+sS'Doing kickboxing'
+p4
+I48
+sS'Doing karate'
+p5
+I47
+sS'Tango'
+p6
+I175
+sS'Roof shingle removal'
+p7
+I146
+sS'Putting on makeup'
+p8
+I135
+sS'Riding bumper cars'
+p9
+I141
+sS'High jump'
+p10
+I71
+sS'Playing bagpipes'
+p11
+I106
+sS'Snowboarding'
+p12
+I164
+sS'Long jump'
+p13
+I87
+sS'Cricket'
+p14
+I35
+sS'Removing ice from car'
+p15
+I140
+sS'Knitting'
+p16
+I84
+sS'Swinging at the playground'
+p17
+I172
+sS'Clean and jerk'
+p18
+I30
+sS'Waxing skis'
+p19
+I196
+sS'Preparing pasta'
+p20
+I132
+sS'Bathing dog'
+p21
+I8
+sS'Sharpening knives'
+p22
+I151
+sS'Discus throw'
+p23
+I42
+sS'Playing rubik cube'
+p24
+I122
+sS'Grooming horse'
+p25
+I65
+sS'Grooming dog'
+p26
+I64
+sS'Snatch'
+p27
+I162
+sS'Preparing salad'
+p28
+I133
+sS'Beach soccer'
+p29
+I10
+sS'Playing drums'
+p30
+I110
+sS'Playing harmonica'
+p31
+I114
+sS'Doing a powerbomb'
+p32
+I44
+sS'Wrapping presents'
+p33
+I199
+sS'Shoveling snow'
+p34
+I155
+sS'Playing pool'
+p35
+I120
+sS'Scuba diving'
+p36
+I150
+sS'Throwing darts'
+p37
+I177
+sS'Swimming'
+p38
+I171
+sS'Clipping cat claws'
+p39
+I34
+sS'Playing ice hockey'
+p40
+I115
+sS'Playing saxophone'
+p41
+I123
+sS'Chopping wood'
+p42
+I29
+sS'Trimming branches or hedges'
+p43
+I178
+sS'Washing face'
+p44
+I193
+sS'Fixing the roof'
+p45
+I57
+sS'Using the pommel horse'
+p46
+I185
+sS'Running a marathon'
+p47
+I148
+sS'Javelin throw'
+p48
+I80
+sS'Spinning'
+p49
+I165
+sS'Ping-pong'
+p50
+I101
+sS'Table soccer'
+p51
+I173
+sS'Using the monkey bar'
+p52
+I184
+sS'Longboarding'
+p53
+I88
+sS'Making a lemonade'
+p54
+I90
+sS'Installing carpet'
+p55
+I78
+sS'Archery'
+p56
+I2
+sS'Using the rowing machine'
+p57
+I186
+sS'Making a cake'
+p58
+I89
+sS'Waterskiing'
+p59
+I195
+sS'Getting a tattoo'
+p60
+I63
+sS'Playing water polo'
+p61
+I127
+sS'Beer pong'
+p62
+I11
+sS'Doing step aerobics'
+p63
+I51
+sS'Rock climbing'
+p64
+I143
+sS'Assembling bicycle'
+p65
+I4
+sS'Hurling'
+p66
+I76
+sS'Shot put'
+p67
+I154
+sS'Drinking beer'
+p68
+I52
+sS'Doing fencing'
+p69
+I46
+sS'Playing polo'
+p70
+I119
+sS'Cheerleading'
+p71
+I28
+sS'Paintball'
+p72
+I96
+sS'Playing racquetball'
+p73
+I121
+sS'BMX'
+p74
+I5
+sS'Cleaning windows'
+p75
+I33
+sS'Plastering'
+p76
+I102
+sS'Tennis serve with ball bouncing'
+p77
+I176
+sS'Brushing teeth'
+p78
+I18
+sS'Playing flauta'
+p79
+I112
+sS'Raking leaves'
+p80
+I138
+sS'Rope skipping'
+p81
+I147
+sS'Playing congas'
+p82
+I109
+sS'Bungee jumping'
+p83
+I21
+sS'Making an omelette'
+p84
+I92
+sS'Hand car wash'
+p85
+I67
+sS'Horseback riding'
+p86
+I74
+sS'Blow-drying hair'
+p87
+I13
+sS'Layup drill in basketball'
+p88
+I86
+sS'Triple jump'
+p89
+I179
+sS'Having an ice cream'
+p90
+I70
+sS'Vacuuming floor'
+p91
+I188
+sS'Dodgeball'
+p92
+I43
+sS'Slacklining'
+p93
+I159
+sS'Canoeing'
+p94
+I24
+sS'Doing nails'
+p95
+I50
+sS'Playing ten pins'
+p96
+I125
+sS'Braiding hair'
+p97
+I15
+sS'Fun sliding down'
+p98
+I58
+sS'Painting fence'
+p99
+I98
+sS'Fixing bicycle'
+p100
+I56
+sS'Washing hands'
+p101
+I194
+sS'Bullfighting'
+p102
+I20
+sS'Laying tile'
+p103
+I85
+sS'Ironing clothes'
+p104
+I79
+sS'Playing field hockey'
+p105
+I111
+sS'Putting on shoes'
+p106
+I136
+sS'Playing beach volleyball'
+p107
+I107
+sS'Tumbling'
+p108
+I181
+sS'Using parallel bars'
+p109
+I182
+sS'Calf roping'
+p110
+I22
+sS'Making a sandwich'
+p111
+I91
+sS'Ice fishing'
+p112
+I77
+sS'Smoking hookah'
+p113
+I161
+sS'Shaving'
+p114
+I152
+sS'Painting furniture'
+p115
+I99
+sS'Rafting'
+p116
+I137
+sS'Getting a piercing'
+p117
+I62
+sS'Springboard diving'
+p118
+I167
+sS'Playing squash'
+p119
+I124
+sS'Playing piano'
+p120
+I118
+sS'Wakeboarding'
+p121
+I190
+sS'Cleaning shoes'
+p122
+I31
+sS'Smoking a cigarette'
+p123
+I160
+sS'Putting in contact lenses'
+p124
+I134
+sS'Sailing'
+p125
+I149
+sS'Hula hoop'
+p126
+I75
+sS'Getting a haircut'
+p127
+I61
+sS'Hitting a pinata'
+p128
+I72
+sS'Playing lacrosse'
+p129
+I117
+sS'Cleaning sink'
+p130
+I32
+sS'Baking cookies'
+p131
+I6
+sS'Volleyball'
+p132
+I189
+sS'Cumbia'
+p133
+I37
+sS'Decorating the Christmas tree'
+p134
+I40
+sS'Tai chi'
+p135
+I174
+sS'Rock-paper-scissors'
+p136
+I144
+sS'Pole vault'
+p137
+I128
+sS'Croquet'
+p138
+I36
+sS'Painting'
+p139
+I97
+sS'Welding'
+p140
+I197
+sS'Mowing the lawn'
+p141
+I95
+sS'Shaving legs'
+p142
+I153
+sS'Powerbocking'
+p143
+I131
+sS'Disc dog'
+p144
+I41
+sS'Using the balance beam'
+p145
+I183
+sS'Changing car wheel'
+p146
+I27
+sS'Walking the dog'
+p147
+I191
+sS'Cutting the grass'
+p148
+I39
+sS'Playing blackjack'
+p149
+I108
+sS'Hammer throw'
+p150
+I66
+sS'Playing accordion'
+p151
+I104
+sS'Polishing shoes'
+p152
+I130
+sS'Kneeling'
+p153
+I83
+sS'Ballet'
+p154
+I7
+sS'Hanging wallpaper'
+p155
+I69
+sS'Blowing leaves'
+p156
+I14
+sS'Hand washing clothes'
+p157
+I68
+sS'Plataform diving'
+p158
+I103
+sS'Doing crunches'
+p159
+I45
+sS'Playing violin'
+p160
+I126
+sS'Carving jack-o-lanterns'
+p161
+I26
+sS'Breakdancing'
+p162
+I16
+sS'Applying sunscreen'
+p163
+I1
+sS'Rollerblading'
+p164
+I145
+sS'Gargling mouthwash'
+p165
+I60
+sS'Spread mulch'
+p166
+I166
+sS'Hopscotch'
+p167
+I73
+sS'Arm wrestling'
+p168
+I3
+sS'Doing motocross'
+p169
+I49
+sS'Mixing drinks'
+p170
+I93
+sS'Windsurfing'
+p171
+I198
+sS'Sumo'
+p172
+I169
+sS'River tubing'
+p173
+I142
+sS'Capoeira'
+p174
+I25
+sS'Starting a campfire'
+p175
+I168
+sS'Belly dance'
+p176
+I12
+sS'Removing curlers'
+p177
+I139
+sS'Futsal'
+p178
+I59
+sS'Kite flying'
+p179
+I82
+sS'Mooping floor'
+p180
+I94
+sS'Brushing hair'
+p181
+I17
+sS'Playing guitarra'
+p182
+I113
+sS'Peeling potatoes'
+p183
+I100
+sS'Building sandcastles'
+p184
+I19
+sS'Kayaking'
+p185
+I81
+sS'Polishing forniture'
+p186
+I129
+sS'Camel ride'
+p187
+I23
+sS'Playing kickball'
+p188
+I116
+sS'Using uneven bars'
+p189
+I187
+sS'Baton twirling'
+p190
+I9
+sS'Tug of war'
+p191
+I180
+sS'Skiing'
+p192
+I158
+sS'Elliptical trainer'
+p193
+I55
+sS'Curling'
+p194
+I38
+sS'Shuffleboard'
+p195
+I156
+sS'Drum corps'
+p196
+I54
+sS'Playing badminton'
+p197
+I105
+sS'Snow tubing'
+p198
+I163
+sS'Surfing'
+p199
+I170
+sS'Washing dishes'
+p200
+I192
+s.
