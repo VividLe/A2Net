@@ -1,0 +1,134 @@
+action_detection_af28.txt
+    0.5000
+
+AP:0.349 at overlap 0.5 for BaseballPitch
+AP:0.436 at overlap 0.5 for BasketballDunk
+AP:0.123 at overlap 0.5 for Billiards
+AP:0.349 at overlap 0.5 for CleanAndJerk
+AP:0.674 at overlap 0.5 for CliffDiving
+AP:0.202 at overlap 0.5 for CricketBowling
+AP:0.155 at overlap 0.5 for CricketShot
+AP:0.308 at overlap 0.5 for Diving
+AP:0.069 at overlap 0.5 for FrisbeeCatch
+AP:0.382 at overlap 0.5 for GolfSwing
+AP:0.538 at overlap 0.5 for HammerThrow
+AP:0.575 at overlap 0.5 for HighJump
+AP:0.605 at overlap 0.5 for JavelinThrow
+AP:0.759 at overlap 0.5 for LongJump
+AP:0.716 at overlap 0.5 for PoleVault
+AP:0.208 at overlap 0.5 for Shotput
+AP:0.114 at overlap 0.5 for SoccerPenalty
+AP:0.290 at overlap 0.5 for TennisSwing
+AP:0.340 at overlap 0.5 for ThrowDiscus
+AP:0.161 at overlap 0.5 for VolleyballSpiking
+
+
+MAP: 0.367683 
+
+action_detection_af30.txt
+    0.5000
+
+AP:0.303 at overlap 0.5 for BaseballPitch
+AP:0.452 at overlap 0.5 for BasketballDunk
+AP:0.111 at overlap 0.5 for Billiards
+AP:0.329 at overlap 0.5 for CleanAndJerk
+AP:0.678 at overlap 0.5 for CliffDiving
+AP:0.170 at overlap 0.5 for CricketBowling
+AP:0.154 at overlap 0.5 for CricketShot
+AP:0.352 at overlap 0.5 for Diving
+AP:0.060 at overlap 0.5 for FrisbeeCatch
+AP:0.520 at overlap 0.5 for GolfSwing
+AP:0.609 at overlap 0.5 for HammerThrow
+AP:0.673 at overlap 0.5 for HighJump
+AP:0.560 at overlap 0.5 for JavelinThrow
+AP:0.760 at overlap 0.5 for LongJump
+AP:0.717 at overlap 0.5 for PoleVault
+AP:0.214 at overlap 0.5 for Shotput
+AP:0.089 at overlap 0.5 for SoccerPenalty
+AP:0.237 at overlap 0.5 for TennisSwing
+AP:0.413 at overlap 0.5 for ThrowDiscus
+AP:0.221 at overlap 0.5 for VolleyballSpiking
+
+
+MAP: 0.381026 
+
+action_detection_af32.txt
+    0.5000
+
+AP:0.298 at overlap 0.5 for BaseballPitch
+AP:0.465 at overlap 0.5 for BasketballDunk
+AP:0.128 at overlap 0.5 for Billiards
+AP:0.386 at overlap 0.5 for CleanAndJerk
+AP:0.688 at overlap 0.5 for CliffDiving
+AP:0.164 at overlap 0.5 for CricketBowling
+AP:0.180 at overlap 0.5 for CricketShot
+AP:0.335 at overlap 0.5 for Diving
+AP:0.057 at overlap 0.5 for FrisbeeCatch
+AP:0.576 at overlap 0.5 for GolfSwing
+AP:0.609 at overlap 0.5 for HammerThrow
+AP:0.682 at overlap 0.5 for HighJump
+AP:0.604 at overlap 0.5 for JavelinThrow
+AP:0.773 at overlap 0.5 for LongJump
+AP:0.738 at overlap 0.5 for PoleVault
+AP:0.241 at overlap 0.5 for Shotput
+AP:0.113 at overlap 0.5 for SoccerPenalty
+AP:0.295 at overlap 0.5 for TennisSwing
+AP:0.384 at overlap 0.5 for ThrowDiscus
+AP:0.247 at overlap 0.5 for VolleyballSpiking
+
+
+MAP: 0.398118 
+
+action_detection_af34.txt
+    0.5000
+
+AP:0.290 at overlap 0.5 for BaseballPitch
+AP:0.467 at overlap 0.5 for BasketballDunk
+AP:0.131 at overlap 0.5 for Billiards
+AP:0.400 at overlap 0.5 for CleanAndJerk
+AP:0.685 at overlap 0.5 for CliffDiving
+AP:0.160 at overlap 0.5 for CricketBowling
+AP:0.180 at overlap 0.5 for CricketShot
+AP:0.320 at overlap 0.5 for Diving
+AP:0.053 at overlap 0.5 for FrisbeeCatch
+AP:0.559 at overlap 0.5 for GolfSwing
+AP:0.612 at overlap 0.5 for HammerThrow
+AP:0.681 at overlap 0.5 for HighJump
+AP:0.606 at overlap 0.5 for JavelinThrow
+AP:0.775 at overlap 0.5 for LongJump
+AP:0.741 at overlap 0.5 for PoleVault
+AP:0.254 at overlap 0.5 for Shotput
+AP:0.107 at overlap 0.5 for SoccerPenalty
+AP:0.275 at overlap 0.5 for TennisSwing
+AP:0.376 at overlap 0.5 for ThrowDiscus
+AP:0.242 at overlap 0.5 for VolleyballSpiking
+
+
+MAP: 0.395681 
+
+action_detection_af36.txt
+    0.5000
+
+AP:0.287 at overlap 0.5 for BaseballPitch
+AP:0.468 at overlap 0.5 for BasketballDunk
+AP:0.130 at overlap 0.5 for Billiards
+AP:0.420 at overlap 0.5 for CleanAndJerk
+AP:0.690 at overlap 0.5 for CliffDiving
+AP:0.157 at overlap 0.5 for CricketBowling
+AP:0.183 at overlap 0.5 for CricketShot
+AP:0.332 at overlap 0.5 for Diving
+AP:0.052 at overlap 0.5 for FrisbeeCatch
+AP:0.567 at overlap 0.5 for GolfSwing
+AP:0.615 at overlap 0.5 for HammerThrow
+AP:0.685 at overlap 0.5 for HighJump
+AP:0.593 at overlap 0.5 for JavelinThrow
+AP:0.776 at overlap 0.5 for LongJump
+AP:0.753 at overlap 0.5 for PoleVault
+AP:0.245 at overlap 0.5 for Shotput
+AP:0.100 at overlap 0.5 for SoccerPenalty
+AP:0.274 at overlap 0.5 for TennisSwing
+AP:0.378 at overlap 0.5 for ThrowDiscus
+AP:0.242 at overlap 0.5 for VolleyballSpiking
+
+
+MAP: 0.397413 

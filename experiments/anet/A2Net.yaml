@@ -1,0 +1,100 @@
+BASIC:
+  ROOT_DIR: '/disk3/zt/code/2_TIP_rebuttal/2_A2Net'
+  WORKERS: 4
+  SEED: 1
+  BACKUP_CODES: False
+  BACKUP_LISTS: ['lib', 'experiments', 'tools']
+  SAVE_PREDICT_RESULT: False
+  SHOW_CFG: False
+  CREATE_OUTPUT_DIR: True
+
+
+CUDNN:
+  BENCHMARK: False
+  DETERMINISTIC: True
+  ENABLE: True
+
+
+DATASET:
+  FEAT_DIR: 'data/anet13'
+  TRAIN_SPLIT: 'training'
+  VAL_SPLIT: 'validation'
+  # todo: WINDOW_SIZE and evaluation process
+  NUM_CLASSES: 201
+  OVERLAP_RATIO_TH: 0.9
+  MAX_SEGMENT_NUM: 30
+  PIN_MEMORY: True
+
+
+MODEL:
+  IN_FEAT_DIM: 1024
+  BASE_FEAT_DIM : 512
+  CON1_FEAT_DIM : 512
+  CON2_FEAT_DIM : 1024
+  CON3_FEAT_DIM : 1024
+  CON4_FEAT_DIM : 2048
+  CON5_FEAT_DIM : 2048
+  CON6_FEAT_DIM : 4096
+  CON7_FEAT_DIM : 4096
+  # parameter for anchor based
+  # Notice: this is related with core/anchor_box_match.default_boxes
+  LAYERS_NAME_AB: ['AL1', 'AL2', 'AL3', 'AL4', 'AL5', 'AL6', 'AL7']
+  SCALE: {'AL1': 0.015625, 'AL2': 0.03125, 'AL3': 0.0625, 'AL4': 0.125, 'AL5': 0.25, 'AL6': 0.5, 'AL7': 1}
+  NUM_ANCHORS: {'AL1': 64, 'AL2': 32, 'AL3': 16, 'AL4': 8, 'AL5': 4, 'AL6': 2, 'AL7': 1}
+  ASPECT_RATIOS: {'AL1': [0.5, 0.75, 1, 1.5, 2],
+                  'AL2': [0.5, 0.75, 1, 1.5, 2],
+                  'AL3': [0.5, 0.75, 1, 1.5, 2],
+                  'AL4': [0.5, 0.75, 1, 1.5, 2],
+                  'AL5': [0.5, 0.75, 1, 1.5, 2],
+                  'AL6': [0.5, 0.75, 1, 1.5, 2],
+                  'AL7': [0.5, 0.75, 1]}
+  NUM_DBOX: {'AL1': 5, 'AL2': 5, 'AL3': 5, 'AL4': 5, 'AL5': 5, 'AL6': 5, 'AL7': 3}
+  # parameter for anchor-free
+  INPUT_TEM_LENGTH: 64
+#  RESCALE: True
+  LAYERS_NAME_AF: ['AL1', 'AL2', 'AL3', 'AL4', 'AL5', 'AL6']
+  TEMPORAL_LENGTH: {'AL1': 64, 'AL2': 32, 'AL3': 16, 'AL4': 8, 'AL5': 4, 'AL6': 2}
+  TEMPORAL_STRIDE: {'AL1': 1,'AL2': 2, 'AL3': 4, 'AL4': 8, 'AL5': 16, 'AL6': 32}
+
+
+TRAIN:
+  LR: 0.0001
+  BATCH_SIZE: 32
+  BEGIN_EPOCH: 1
+  END_EPOCH: 24
+  LR_DECAY_EPOCHS: [17]
+  LR_DECAY_FACTOR: 0.1
+  P_CLASS_AB: 1
+  P_CONF_AB: 1
+  P_LOC_AB: 1
+  P_CLASS_AF: 1
+  P_LOC_AF: 1
+  # todo: whether use P_CONF_AF?
+#  P_CONF_AF: 1
+
+  NEGATIVE_RATIO: 1
+  ANCHOR_RX_SCALE: 0.1
+  ANCHOR_RW_SCALE: 0.1
+  MATCH_TH: 0.5
+  MODELS_DIR: ''
+  LOG_FILE: 'output/output/train_loss.log'
+  MODEL_DIR: 'output/output/'
+
+
+TEST:
+  BATCH_SIZE: 32
+  EVAL_INTERVAL: 2
+  TOP_K_RPOPOSAL: 100
+  SOFT_NMS_ALPHA: 0.75
+  SOFT_NMS_LOW_TH: 0.65
+  SOFT_NMS_HIGH_TH: 0.9
+  NMS_TH: 0.6
+  CONCAT_AB: 0.4
+  FILTER_NEGATIVE_TH: 0.98
+  FILTER_CONF_TH: 0.1
+  FRAME_RATE: 25
+  IDX_NAME_FILE: 'lib/dataset/materials/idx_name_dict.pkl'
+  GT_FILE: 'lib/dataset/materials/activity_net.v1-3.min.json'
+  PREDICT_CSV_FILE: 'output/output/prediction'
+  PREDICT_TXT_FILE: 'output/output/action_detection'
+  OUTDF_COLUMNS: ['video_name', 'start', 'conf', 'xmin', 'xmax']
