@@ -6,14 +6,12 @@ import argparse
 
 
 def window_data(start_frame, ann_df, video_name):
-    # TODO: parameter
     window_size = 512.0
     end_frame = start_frame + window_size
 
     label = list()
     box = list()
     window = [int(start_frame), video_name]
-    # TODO: parameter
     class_label = [7, 9, 12, 21, 22, 23, 24, 26, 31, 33, 36, 40, 45, 51, 68, 79, 85, 92, 93, 97]
     class_label = [0] + class_label
 
@@ -23,9 +21,7 @@ def window_data(start_frame, ann_df, video_name):
         assert act_end > act_start
         overlap = min(end_frame, act_end) - max(start_frame, act_start)
         overlap_ration = overlap * 1.0 / (act_end - act_start)
-        # print('overlap_ration', overlap_ration)
 
-        # TODO: parameter
         overlap_ratio_threshold = 0.9
         if overlap_ration > overlap_ratio_threshold:
             gt_start = max(start_frame, act_start) - start_frame
@@ -44,7 +40,6 @@ def window_data(start_frame, ann_df, video_name):
 
 
 def sliding_window(ann_df, video_name, is_train=True):
-    # TODO: use config
     window_size = 512.0
     video_ann_df = ann_df[ann_df.video == video_name]
     frame_count = video_ann_df.frame_num.values[0]
@@ -105,6 +100,5 @@ if __name__ == '__main__':
     #     pickle.dump(gt_label, f)
     # with open(os.path.join(args.info_dir, 'gt_box.pkl'), 'wb') as f:
     #     pickle.dump(gt_box, f)
-    # todo: I can store this in .pkl file
     with open(os.path.join(args.info_dir, 'window_info.log'), 'w') as f:
         f.writelines("%d, %s\n" % (gt_window[0], gt_window[1]) for gt_window in gt_windows)

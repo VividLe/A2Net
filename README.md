@@ -20,8 +20,6 @@ Before running the code, please activate this conda environment.
 
 Download Thumos14 from [BaiDuYun](https://drive.google.com/drive/folders/1GJi4yZROTNURo1j-TJlUfs0MBsITJ0Ug?usp=sharing).
 
-Download ActivityNet1.3  features from [BaiDuYun](https://drive.google.com/drive/folders/1klht1i1HfNoxiss2UWBqdIznkeQAbxvc).	
-
 	Please ensure the data structure is as below
 
 ~~~~
@@ -34,15 +32,6 @@ Download ActivityNet1.3  features from [BaiDuYun](https://drive.google.com/drive
        └── test
            ├── video_test_0000004.npz
            ├── video_test_0000006.npz
-           └── ...
-   └── anet13
-       ├── training
-           ├── v___c8enCfzqw.npz
-           ├── v___dXUJsj3yo.npz
-           └── ...
-       └── validation
-           ├── v__1vYKA7mNLI.npz
-           ├── v__3I4nm2zF5Y.npz
            └── ...
      
 ~~~~
@@ -59,19 +48,6 @@ cd ./tools
 python train.py
 ```
 
-To train the A2Net model on ActivityNet v1.3 dataset, please first modify parameters in:
-```parameters
-./experiments/anet/A2Net.yaml
-```
-
-Then run this command:
-```train
-cd ./tools
-python train.py
-```
-
-
-
 ## Evaluation
 
 To evaluate A2Net model on Thumos14, run:
@@ -80,19 +56,12 @@ To evaluate A2Net model on Thumos14, run:
 python eval.py -cfg ./experiments/thumos/A2Net.yaml -weight_file ../checkpoints/THUMOS14.pth
 ```
 
-To evaluate A2Net model on ActivityNet1.3, run:
-
-```eval
-python eval.py -cfg ./experiments/anet/A2Net.yaml -weight_file ../checkpoints/ActivityNet1.3.pth
-```
-
 
 ## Pre-trained Models
 
 You can download pretrained models here:
 
 - [THUMOS14.pth](https://pan.baidu.com/s/1YGk6bK-UVkBLUD4zBtYfyg), (code: 4550), trained on THUMOS14 using parameters same as "./experiments/thumos/A2Net.yaml". 
-- [ActivityNet1.3.pth](https://pan.baidu.com/s/1-9RqDywS9trolwf-fg_b8Q), (code: 2870) trained on ActivityNet v1.3 using parameters same as "./experiments/anet/A2Net.yaml". 
 
 
 ## Results
@@ -106,14 +75,9 @@ Our model achieves the following performance on :
 | mAP       | 61.1  | 60.2  | 58.6  | 54.1  | 45.5  | 32.5  | 17.2  |
 
 
-### [ActivityNet v1.3](http://activity-net.org/)
-
-| threshold | average-mAP | 0.50  | 0.55  | 0.60  | 0.65  | 0.70  | 0.75  | 0.80  | 0.85  | 0.90  | 0.95 |
-| --------- | ----------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ---- |
-| mAP       | 28.70       | 44.52       | 42.18 | 39.41 | 36.49 | 33.47 | 29.32 | 24.22 | 19.40 | 12.83 | 5.17 |
 
 
 ### Contact
 
-If you have any questions, please file an issue or contact [Le Yang](nwpuyangle@gmail.com) or [Tao Zhao](taozhao2011@gmail.com).
+If you have any questions, please file an issue or contact [Le Yang](nwpuyangle@gmail.com).
 

@@ -1,5 +1,5 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 os.environ['OMP_NUM_THREADS'] = '1'
 import argparse
 import _init_paths
@@ -11,20 +11,18 @@ import torch
 import torch.optim as optim
 from torch.utils.data import DataLoader
 import torch.backends.cudnn as cudnn
-import time
 
 from dataset.TALDataset import TALDataset
 from models.a2net import LocNet
 from core.function import train, evaluation
 from core.post_process import final_result_process
-from core.anchor_box_utils import weight_init
+from core.utils_ab import weight_init
 from utils.utils import save_model, decay_lr, backup_codes
 
 
 def parse_args():
     parser = argparse.ArgumentParser(description='SSAD temporal action localization')
-    parser.add_argument('--cfg', type=str, help='experiment config file', default='../experiments/anet/A2Net.yaml')
-    parser.add_argument('--weight_file', type=str, help='experiment config file', default='../checkpoints/ActivityNet1.3.pth')
+    parser.add_argument('--cfg', type=str, help='experiment config file', default='../experiments/A2Net_thumos.yaml')
     args = parser.parse_args()
     return args
 
@@ -62,29 +60,24 @@ def main():
     model.apply(weight_init)
     model.cuda()
 
-    #evaluate existing model
-    weight_file = '/disk3/zt/code/2_TIP_rebuttal/2_A2Net/output/thumos/output_toy/model_100.pth'
-    epoch = 4
-    checkpoint = torch.load(weight_file)
-    model.load_state_dict(checkpoint['model'])
-    out_df_ab, out_df_af = evaluation(val_loader, model, epoch, cfg)
+    optimizer = optim.Adam(model.parameters(), lr=cfg.TRAIN.LR)
+    for epoch in range(cfg.TRAIN.BEGIN_EPOCH, cfg.TRAIN.END_EPOCH+1):
+        loss_train = train(cfg, train_loader, model, optimizer)
+        print('epoch %d: loss: %f' % (epoch, loss_train))
+        with open(os.path.join(cfg.BASIC.ROOT_DIR, cfg.TRAIN.LOG_FILE), 'a') as f:
+            f.write("epoch %d, loss: %.4f\n" % (epoch, loss_train))
 
-    '''
-    flag:
-    0: jointly consider out_df_ab and out_df_af
-    1: only consider out_df_ab
-    2: only consider out_df_af    
-    '''
-    # evaluate both branch
-    out_df_list = [out_df_ab, out_df_af]
-    final_result_process(out_df_list, epoch, cfg, flag=0)
-    # # only evaluate anchor-based branch
-    # final_result_process(out_df_ab, epoch, cfg, flag=1)
-    # # only evaluate anchor-free branch
-    # final_result_process(out_df_af, epoch, cfg, flag=2)
+        # decay lr
+        if epoch in cfg.TRAIN.LR_DECAY_EPOCHS:
+            decay_lr(optimizer, factor=cfg.TRAIN.LR_DECAY_FACTOR)
+
+        if epoch in cfg.TEST.EVAL_INTERVAL:
+            save_model(cfg, epoch=epoch, model=model, optimizer=optimizer)
+            out_df_ab, out_df_af = evaluation(val_loader, model, epoch, cfg)
+            out_df_list = [out_df_ab, out_df_af]
+            final_result_process(out_df_list, epoch, cfg, flag=0)
 
 
 if __name__ == '__main__':
     main()
-
 

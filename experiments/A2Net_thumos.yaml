@@ -1,5 +1,5 @@
 BASIC:
-  ROOT_DIR: '/disk3/zt/code/2_TIP_rebuttal/2_A2Net'
+  ROOT_DIR: '/disk3/zt/code/2_TIP_rebuttal/A2Net'
   WORKERS: 4
   SEED: 1
   BACKUP_CODES: True
@@ -16,7 +16,7 @@ CUDNN:
 
 
 DATASET:
-  FEAT_DIR: 'data/thumos'
+  FEAT_DIR: 'data/thumos_toy'
   TRAIN_SPLIT: 'val'
   VAL_SPLIT: 'test'
   WINDOW_SIZE: 512
@@ -28,7 +28,7 @@ DATASET:
 
 
 MODEL:
-  IN_FEAT_DIM: 2048 #1024
+  IN_FEAT_DIM: 2048
   BASE_FEAT_DIM: 512
   CON1_FEAT_DIM: 512
   CON2_FEAT_DIM: 1024
@@ -69,14 +69,13 @@ TRAIN:
   ANCHOR_RW_SCALE: 0.1
   MATCH_TH: 0.5
   MODELS_DIR: ''
-  LOG_FILE: 'output/thumos/default_result/train_loss.log'
-  MODEL_DIR: 'output/thumos/default_result/'
+  LOG_FILE: 'output/thumos/train_loss.log'
+  MODEL_DIR: 'output/thumos/'
 
 
 TEST:
   BATCH_SIZE: 1
-#  EVAL_INTERVAL:  1
-  EVAL_INTERVAL: [28, 30, 32, 34, 36, 38, 40]
+  EVAL_INTERVAL: [3, 28, 30, 32, 34, 36, 38, 40]
   TOP_K_RPOPOSAL: 200
   SOFT_NMS_ALPHA: 0.75
   SOFT_NMS_LOW_TH: 0.65
@@ -92,7 +91,7 @@ TEST:
   VIDEOS_24FPS: ['video_test_0001207']
   IDX_NAME_FILE: 'lib/dataset/materials/idx_name_dict.pkl'
   GT_FILE: 'lib/dataset/materials/activity_net.v1-3.min.json'
-  PREDICT_CSV_FILE: 'output/thumos/default_result/prediction'
-  PREDICT_TXT_FILE: 'output/thumos/default_result/action_detection'
+  PREDICT_CSV_FILE: 'output/thumos/prediction'
+  PREDICT_TXT_FILE: 'output/thumos/action_detection'
   OUTDF_COLUMNS_AB: ['video_name', 'cate_idx', 'conf', 'xmax', 'xmin']
   OUTDF_COLUMNS_AF: ['video_name', 'cate_idx', 'conf', 'xmax', 'xmin']

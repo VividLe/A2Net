@@ -44,6 +44,8 @@ config.MODEL.FEATURE_DIM = 512
 config.MODEL.MID_FEAT_DIM = 512
 config.MODEL.ANCHOR_FEAT_DIM = 512
 config.MODEL.LAYERS_NAME = ['AL1']
+config.MODEL.LAYERS_NAME_AB = ['AL1']
+config.MODEL.LAYERS_NAME_AF = ['AL1']
 config.MODEL.SCALE = {'AL1': 0.0625}
 config.MODEL.NUM_ANCHORS = {'AL1': 16,}
 config.MODEL.ASPECT_RATIOS = {'AL1': [0.5]}
@@ -56,9 +58,11 @@ config.MODEL.CON3_FEAT_DIM = 1
 config.MODEL.CON4_FEAT_DIM = 1
 config.MODEL.CON5_FEAT_DIM = 1
 config.MODEL.CON6_FEAT_DIM = 1
+config.MODEL.CON7_FEAT_DIM = 1
 config.MODEL.REDU_CHA_DIM = 1
 config.MODEL.RESCALE = True
 config.MODEL.TEMPORAL_LENGTH = 1
+config.MODEL.INPUT_TEM_LENGTH = 1
 config.MODEL.TEMPORAL_STRIDE = 1
 
 # TRAIN related params
@@ -106,6 +110,8 @@ config.TEST.GT_FILE = ''
 config.TEST.EVAL_INTERVAL = 1
 config.TEST.CATE_IDX_OCC = 1
 config.TEST.CATE_IDX_REP = 1
+config.TEST.CONCAT_AB = 1
+config.TEST.OUTDF_COLUMNS = ['video_name']
 
 
 def genconfigonfig(config_file):

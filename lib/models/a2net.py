@@ -1,6 +1,5 @@
 import torch.nn as nn
 import torch
-from thop import profile
 
 
 def conv1d_c512(cfg, stride, out_channels=None):
@@ -287,9 +286,6 @@ if __name__ == '__main__':
     cfg_file = '/disk/yangle/TIP2020-A2Net/A2Net/experiments/thumos/A2Net.yaml'
     update_config(cfg_file)
 
-    model = LocNet(cfg)
-    data = torch.randn((1, 1024, 128))
-    macs, params = profile(model, inputs=(data,))
-    FLOPs = macs * 2
-    print('FLOPs: %d' % FLOPs)
-    print('params: %d' % params)
+    model = LocNet(cfg).cuda()
+    data = torch.randn((1, 1024, 128)).cuda()
+    output = model(data)

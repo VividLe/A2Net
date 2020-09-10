@@ -87,7 +87,6 @@ def train(cfg, train_loader, model, optimizer):
     for feat_spa, feat_tem, boxes, label, action_num, cls_label, reg_label, cate_label in train_loader:
         optimizer.zero_grad()
 
-        # feature = feat_spa
         feature = torch.cat((feat_spa, feat_tem), dim=1)
         feature = feature.type_as(dtype)
         boxes = boxes.float().type_as(dtype)
@@ -129,7 +128,6 @@ def evaluation(val_loader, model, epoch, cfg):
     for feat_spa, feat_tem, begin_frame, video_name in val_loader:
         begin_frame = begin_frame.detach().numpy()
 
-        # feature = feat_spa
         feature = torch.cat((feat_spa, feat_tem), dim=1)
         feature = feature.type_as(dtype)
         out_af, out_ab = model(feature)
