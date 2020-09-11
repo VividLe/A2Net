@@ -1,0 +1,90 @@
+#AUTO_RESUME: True
+CUDNN:
+  BENCHMARK: False
+  DETERMINISTIC: True
+  ENABLE: True
+
+ROOT_DIR: '/disk3/zt/code/2_TIP_rebuttal/A2Net'
+WORKERS: 4
+PIN_MEMORY: True
+SEED: 7
+SAVE_PREDICT_RESULT: True
+
+
+DATASET:
+  FEAT_DIR: 'data/anet13/'
+  TRAIN_SPLIT: 'training'
+  VAL_SPLIT: 'validation'
+  NUM_CLASSES: 201
+  OVERLAP_RATIO_TH: 0.9
+  MAX_SEGMENT_NUM: 30
+  RESCALE_TEM_LENGTH: 256
+
+
+MODEL:
+  RESCALE: True
+  IN_FEAT_DIM: 2048
+  NET_FEAT_DIM: 512
+
+  #anchor based
+  LAYERS_NAME_AB: ['AL0', 'AL1', 'AL2', 'AL3', 'AL4', 'AL5', 'AL6']
+  NUM_ANCHORS: {'AL0': 64, 'AL1': 32, 'AL2': 16, 'AL3': 8, 'AL4': 4, 'AL5': 2,'AL6': 1}
+  SCALE: {'AL0': 0.015625, 'AL1': 0.03125, 'AL2': 0.0625, 'AL3': 0.125, 'AL4': 0.25, 'AL5': 0.5, 'AL6': 1}
+  ASPECT_RATIOS: {'AL0': [0.5, 0.75, 1, 1.5, 2],
+                  'AL1': [0.5, 0.75, 1, 1.5, 2],
+                  'AL2': [0.5, 0.75, 1, 1.5, 2],
+                  'AL3': [0.5, 0.75, 1, 1.5, 2],
+                  'AL4': [0.5, 0.75, 1, 1.5, 2],
+                  'AL5': [0.5, 0.75, 1, 1.5, 2],
+                  'AL6': [0.5, 0.75, 1],}
+  NUM_DBOX: {'AL0': 5, 'AL1': 5, 'AL2': 5, 'AL3': 5, 'AL4': 5, 'AL5': 5, 'AL6': 3}
+
+  #anchor free
+  INPUT_TEM_LENGTH: 64
+  #note for anchor free ,just need util AL5 , last feature length is 2
+  LAYERS_NAME_AF: ['AL0', 'AL1', 'AL2', 'AL3', 'AL4', 'AL5']
+  TEMPORAL_LENGTH: { 'AL0': 64,'AL1': 32, 'AL2': 16, 'AL3': 8, 'AL4': 4, 'AL5': 2}
+  TEMPORAL_STRIDE: {'AL0': 1,'AL1': 2, 'AL2': 4, 'AL3': 8, 'AL4': 16, 'AL5': 32}
+
+
+
+TRAIN:
+  LR: 0.0001
+  BATCH_SIZE: 32
+  BEGIN_EPOCH: 1
+  END_EPOCH: 24
+  LR_DECAY_EPOCHS: [24]
+  LR_DECAY_FACTOR: 0.1
+  P_CLASS_AF: 1
+  P_LOC_AF: 1
+  P_CONF_AF: 1
+  P_CLASS_AB: 1
+  P_LOC_AB: 1
+  P_CONF_AB: 1
+  NEGATIVE_RATIO: 1
+  ANCHOR_RX_SCALE: 0.1
+  ANCHOR_RW_SCALE: 0.1
+  MATCH_TH: 0.5
+  MODELS_DIR: ''
+  LOG_FILE: 'output/SSAD_anet/train_loss.log'
+  MODEL_DIR: 'output/SSAD_anet/'
+
+
+TEST:
+  EVAL_INTERVAL: 2
+  BATCH_SIZE: 32
+  TOP_K_RPOPOSAL: 100
+  SOFT_NMS_ALPHA: 0.75
+  SOFT_NMS_LOW_TH: 0.65
+  SOFT_NMS_HIGH_TH: 0.9
+  #todo ab NMS_TH=0.5 ,af NMS_TH=0.7
+  NMS_TH: 0.6
+  CONCAT_AB: 0.4  # ############ todo
+  FILTER_NEGATIVE_TH: 0.98
+  FILTER_CONF_TH: 0.1
+  FRAME_RATE: 25
+  IDX_NAME_FILE: 'lib/dataset/materials/idx_name_dict.pkl'
+  GT_FILE: 'lib/dataset/materials/activity_net.v1-3.min.json'
+  PREDICT_CSV_FILE: 'output/SSAD_anet/prediction'
+  PREDICT_TXT_FILE: 'output/SSAD_anet/action_detection'
+  OUTDF_COLUMNS: ['video_name', 'start', 'conf', 'xmin', 'xmax']

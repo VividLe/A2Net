@@ -18,7 +18,7 @@ Before running the code, please activate this conda environment.
 
 ## Data Preparation
 
-Download Thumos14 from [BaiDuYun](https://drive.google.com/drive/folders/1GJi4yZROTNURo1j-TJlUfs0MBsITJ0Ug?usp=sharing).
+Download Thumos14 from [BaiDuYun](https://pan.baidu.com/s/1u9_tyZ_it4rENGqfvTZsCw) (code: lele).
 
 	Please ensure the data structure is as below
 
@@ -61,7 +61,7 @@ python eval.py -cfg ./experiments/thumos/A2Net.yaml -weight_file ../checkpoints/
 
 You can download pretrained models here:
 
-- [THUMOS14.pth](https://pan.baidu.com/s/1YGk6bK-UVkBLUD4zBtYfyg), (code: 4550), trained on THUMOS14 using parameters same as "./experiments/thumos/A2Net.yaml". 
+- [THUMOS14.pth](https://pan.baidu.com/s/1Cbx5NeNCxIdr2Zpn7KerJg), (code: lele), trained on THUMOS14 using parameters same as "./experiments/thumos/A2Net.yaml". 
 
 
 ## Results
