@@ -40,20 +40,12 @@ Download Thumos14 from [BaiDuYun](https://pan.baidu.com/s/1u9_tyZ_it4rENGqfvTZsC
 
 To train the A2Net model on THUMOS14 dataset, please first modify parameters in:
 ```parameters
-./experiments/thumos/A2Net.yaml
+./experiments/A2Net_thumos.yaml
 ```
 Then run this command:
 ```train
 cd ./tools
-python train.py
-```
-
-## Evaluation
-
-To evaluate A2Net model on Thumos14, run:
-
-```eval
-python eval.py -cfg ./experiments/thumos/A2Net.yaml -weight_file ../checkpoints/THUMOS14.pth
+python main.py
 ```
 
 
@@ -61,7 +53,7 @@ python eval.py -cfg ./experiments/thumos/A2Net.yaml -weight_file ../checkpoints/
 
 You can download pretrained models here:
 
-- [THUMOS14.pth](https://pan.baidu.com/s/1Cbx5NeNCxIdr2Zpn7KerJg), (code: lele), trained on THUMOS14 using parameters same as "./experiments/thumos/A2Net.yaml". 
+- [THUMOS14](https://pan.baidu.com/s/1Cbx5NeNCxIdr2Zpn7KerJg), (code: lele), trained on THUMOS14 using parameters same as "./experiments/A2Net_thumos.yaml". 
 
 
 ## Results
@@ -79,5 +71,5 @@ Our model achieves the following performance on :
 
 ### Contact
 
-If you have any questions, please file an issue or contact [Le Yang](nwpuyangle@gmail.com).
+If you have any questions, please file an issue or contact Le Yang via nwpuyangle@gmail.com.
 
