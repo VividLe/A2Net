@@ -26,12 +26,12 @@ Download Thumos14 from [BaiDuYun](https://pan.baidu.com/s/1u9_tyZ_it4rENGqfvTZsC
 ├── data
    └── thumos
        ├── val
-           ├── video_validation_0000051.npz
-           ├── video_validation_0000052.npz
+           ├── video_validation_0000051_02432.npz
+           ├── video_validation_0000051_02560.npz
            └── ...
        └── test
-           ├── video_test_0000004.npz
-           ├── video_test_0000006.npz
+           ├── video_test_0000004_00000.npz
+           ├── video_test_0000004_00256.npz
            └── ...
      
 ~~~~
